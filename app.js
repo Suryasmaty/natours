@@ -25,13 +25,13 @@ app.use(
 );
 
 // 1)Middlewares
-/*
+
 app.use(
   helmet({
     contentSecurityPolicy: false,
   })
 );
-*/
+
 console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
