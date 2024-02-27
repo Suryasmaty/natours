@@ -5,6 +5,7 @@ const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const compression = require('compression');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -32,7 +33,7 @@ app.use(
   })
 );
 
-console.log(process.env.NODE_ENV);
+//console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
@@ -50,6 +51,8 @@ app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cookieParser());
 //app.use(express.static(`${__dirname}/public`));//we can use this as well instead of below
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(compression());
 
 //Test middleware
 app.use((req, res, next) => {
