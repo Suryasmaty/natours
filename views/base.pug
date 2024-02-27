@@ -1,0 +1,44 @@
+doctype html 
+html 
+  head
+    block head
+      meta(charset="UTF-8")
+      meta(name="viewport" content="width=device-width, initial-scale=1.0")
+      //meta(http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap: https://cdnjs.cloudflare.com; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;")
+      //meta(http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap: https://cdnjs.cloudflare.com; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:")
+      //meta(http-equiv="Content-Security-Policy" content="script-src 'self' https://cdnjs.cloudflare.com;")
+      //meta(http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *;**script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';** ")
+
+
+      link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato:300,300i,700")
+      link(rel='stylesheet' href='/css/style.css')
+      link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+      title Natours | #{title}
+
+
+  body 
+    //HEADER
+    include _header
+
+    //CONTENT
+    block content 
+      h1 This is  a Block content
+
+    //FOOTER
+    include _footer
+
+
+    //script
+    //-script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js')
+    //-script(src='/js/uploadPhoto.js')
+    //-script(src='/js/mapbox.js')
+    //-script(src="/js/login.mjs" type="module")
+    script(src='/js/bundle.js')
+
+    
+
+
+
+
+
+
