@@ -61,7 +61,7 @@ exports.getOne = (Model, popOptions) =>
       return next(new AppError('No tour found with that ID', 404));
     }
 
-    console.log(doc.user);
+    //console.log(doc.user);
     res.status(200).json({
       status: 'Success',
       data: {

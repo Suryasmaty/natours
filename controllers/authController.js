@@ -40,7 +40,7 @@ exports.signUp = catchAsync(async (req, res, next) => {
   });
 
   const url = `${req.protocol}://${req.get('host')}/me`;
-  console.log(url);
+  //console.log(url);
   await new Email(newUser, url).sendWelcome();
 
   //console.log(newUser._id, process.env.JWT_SECRET, process.env.JWT_EXPIRES_IN);
@@ -130,7 +130,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
   //4)check if user changed password after token was issued
-  console.log('authcontroller', freshUser.changedPasswordAfter(decoded.iat));
+  //console.log('authcontroller', freshUser.changedPasswordAfter(decoded.iat));
   if (await freshUser.changedPasswordAfter(decoded.iat)) {
     return next(
       new AppError('User Recently changed password, Please login again', 401)
