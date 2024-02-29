@@ -16,7 +16,8 @@ mongoose
   .then((con) => {
     //console.log(con.connections);
     console.log('DB connection successful');
-  });
+  })
+  .catch((err) => console.log(err));
 
 const app = require('./app');
 //console.log(process.env);
